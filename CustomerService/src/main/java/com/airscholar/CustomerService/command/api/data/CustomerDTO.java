@@ -1,6 +1,6 @@
 package com.airscholar.CustomerService.command.api.data;
 
-import com.airscholar.CommonService.data.CardDetails;
+import com.airscholar.CustomerService.command.api.entity.CardDetails;
 import lombok.Data;
 
 @Data

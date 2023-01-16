@@ -1,7 +1,7 @@
 package com.airscholar.CustomerService.command.api.service;
 
 import com.airscholar.CustomerService.command.api.data.CardDetailsRepository;
-import com.airscholar.CommonService.data.CardDetails;
+import com.airscholar.CustomerService.command.api.entity.CardDetails;
 import org.springframework.stereotype.Component;
 
 @Component

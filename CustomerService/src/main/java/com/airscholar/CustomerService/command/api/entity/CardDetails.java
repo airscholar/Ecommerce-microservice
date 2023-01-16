@@ -1,4 +1,4 @@
-package com.airscholar.CommonService.data;
+package com.airscholar.CustomerService.command.api.entity;
 
 //import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

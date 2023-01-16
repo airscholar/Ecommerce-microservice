@@ -3,7 +3,7 @@ package com.airscholar.PaymentService.command.api.event;
 import com.airscholar.CommonService.event.PaymentCompletedEvent;
 import com.airscholar.CommonService.event.PaymentCreatedEvent;
 import com.airscholar.CommonService.event.PaymentValidatedEvent;
-import com.airscholar.CommonService.data.Payment;
+import com.airscholar.PaymentService.data.Payment;
 import com.airscholar.PaymentService.service.PaymentService;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;

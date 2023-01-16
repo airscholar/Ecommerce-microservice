@@ -1,6 +1,6 @@
 package com.airscholar.CustomerService.query.api.controller;
 
-import com.airscholar.CommonService.data.Customer;
+import com.airscholar.CustomerService.command.api.entity.Customer;
 import com.airscholar.CustomerService.query.api.queries.GetAllCustomersQuery;
 import com.airscholar.CustomerService.query.api.queries.GetCustomerByIdQuery;
 import org.axonframework.messaging.responsetypes.ResponseTypes;

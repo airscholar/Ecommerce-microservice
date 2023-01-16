@@ -1,6 +1,6 @@
 package com.airscholar.PaymentService.query.api.projection;
 
-import com.airscholar.CommonService.data.Payment;
+import com.airscholar.PaymentService.data.Payment;
 import com.airscholar.PaymentService.query.api.query.GetPaymentByIdQuery;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;

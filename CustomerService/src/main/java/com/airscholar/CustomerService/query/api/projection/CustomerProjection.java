@@ -1,6 +1,6 @@
 package com.airscholar.CustomerService.query.api.projection;
 
-import com.airscholar.CommonService.data.Customer;
+import com.airscholar.CustomerService.command.api.entity.Customer;
 import com.airscholar.CustomerService.command.api.service.CustomerService;
 import com.airscholar.CustomerService.query.api.queries.GetAllCustomersQuery;
 import com.airscholar.CustomerService.query.api.queries.GetCustomerByIdQuery;

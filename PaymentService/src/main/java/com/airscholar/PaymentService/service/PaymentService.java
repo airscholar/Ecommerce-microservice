@@ -1,6 +1,6 @@
 package com.airscholar.PaymentService.service;
 
-import com.airscholar.CommonService.data.Payment;
+import com.airscholar.PaymentService.data.Payment;
 import com.airscholar.PaymentService.data.PaymentRepository;
 import org.springframework.stereotype.Component;
 

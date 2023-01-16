@@ -1,4 +1,4 @@
-package com.airscholar.CommonService.data;
+package com.airscholar.PaymentService.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

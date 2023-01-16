@@ -1,7 +1,7 @@
 package com.airscholar.CustomerService.command.api.aggregate;
 
 import com.airscholar.CustomerService.command.api.command.CreateCustomerCommand;
-import com.airscholar.CommonService.data.CardDetails;
+import com.airscholar.CustomerService.command.api.entity.CardDetails;
 import com.airscholar.CustomerService.command.api.events.CustomerCreatedEvent;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

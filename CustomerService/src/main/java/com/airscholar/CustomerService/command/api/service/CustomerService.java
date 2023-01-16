@@ -1,7 +1,7 @@
 package com.airscholar.CustomerService.command.api.service;
 
 import com.airscholar.CustomerService.command.api.data.CustomerRepository;
-import com.airscholar.CommonService.data.Customer;
+import com.airscholar.CustomerService.command.api.entity.Customer;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
