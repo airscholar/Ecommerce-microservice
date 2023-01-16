@@ -1,7 +1,7 @@
-package com.airscholar.PaymentService.service;
+package com.airscholar.PaymentService.command.api.service;
 
-import com.airscholar.PaymentService.data.Payment;
-import com.airscholar.PaymentService.data.PaymentRepository;
+import com.airscholar.PaymentService.command.api.data.Payment;
+import com.airscholar.PaymentService.command.api.data.PaymentRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,5 +18,9 @@ public class PaymentService {
 
     public Payment findByTransactionId(String transactionId){
         return paymentRepository.findByTransactionId(transactionId);
+    }
+
+    public Payment findById(Long id){
+        return paymentRepository.findById(id).get();
     }
 }

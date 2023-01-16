@@ -1,11 +1,12 @@
 package com.airscholar.PaymentService.command.api.aggregate;
 
 import com.airscholar.CommonService.command.CompletePaymentCommand;
-import com.airscholar.CommonService.command.CreatePaymentCommand;
+import com.airscholar.PaymentService.command.api.command.CreatePaymentCommand;
 import com.airscholar.CommonService.command.ValidatePaymentCommand;
 import com.airscholar.CommonService.event.PaymentCompletedEvent;
 import com.airscholar.CommonService.event.PaymentCreatedEvent;
 import com.airscholar.CommonService.event.PaymentValidatedEvent;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aggregate
 @Slf4j
+@NoArgsConstructor
 public class PaymentAggregate {
     @AggregateIdentifier
     private String transactionId;
@@ -25,7 +27,8 @@ public class PaymentAggregate {
     private String paymentStatus;
 
     @CommandHandler
-    public void handle(CreatePaymentCommand createPaymentCommand){
+    public PaymentAggregate(CreatePaymentCommand createPaymentCommand){
+        log.info("Handling CreatePaymentCommand {}", createPaymentCommand);
         PaymentCreatedEvent paymentCreatedEvent = new PaymentCreatedEvent();
 
         BeanUtils.copyProperties(createPaymentCommand, paymentCreatedEvent);
@@ -55,6 +58,7 @@ public class PaymentAggregate {
         AggregateLifecycle.apply(paymentCompletedEvent);
 
     }
+
     @EventSourcingHandler
     public void on(PaymentCreatedEvent event){
         this.transactionId = event.getTransactionId();

@@ -14,9 +14,15 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public List<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomers() {
         return this.customerRepository.findAll();
     }
 
-    public Customer getCustomerById(Long id) { return this.customerRepository.findById(id).get(); }
+    public Customer getCustomerById(Long id) {
+        return this.customerRepository.findById(id).get();
+    }
+
+    public Customer getCustomerByCustomerId(String customerId) {
+        return this.customerRepository.findByCustomerId(customerId);
+    }
 }

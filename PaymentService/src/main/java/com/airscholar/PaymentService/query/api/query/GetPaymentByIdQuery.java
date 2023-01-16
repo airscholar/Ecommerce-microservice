@@ -8,5 +8,5 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 public class GetPaymentByIdQuery {
-    private String Id;
+    private Long id;
 }

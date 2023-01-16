@@ -1,4 +1,4 @@
-package com.airscholar.CommonService.command;
+package com.airscholar.PaymentService.command.api.command;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,5 +15,5 @@ public class CreatePaymentCommand {
     @TargetAggregateIdentifier
     private String transactionId;
     private String orderId;
-    private String orderStatus;
+    private String paymentStatus;
 }

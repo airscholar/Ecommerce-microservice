@@ -1,4 +1,4 @@
-package com.airscholar.CommonService.queries;
+package com.airscholar.CustomerService.query.api.queries;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetPaymentByTransactionId {
-    private String transactionId;
+public class GetCustomerByCustomerIdQuery {
+    private String customerId;
 }

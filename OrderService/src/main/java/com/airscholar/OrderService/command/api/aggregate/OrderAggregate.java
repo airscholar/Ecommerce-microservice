@@ -8,6 +8,7 @@ import org.aspectj.weaver.ast.Or;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 import org.springframework.beans.BeanUtils;
 
@@ -26,7 +27,7 @@ public class OrderAggregate {
     private String status;
 
     @CommandHandler
-    public OrderAggregate(CreateOrderCommand createOrderCommand){
+    public OrderAggregate(CreateOrderCommand createOrderCommand) {
         log.info("Handling CreateOrderCommand {}", createOrderCommand);
 
         OrderCreatedEvent event = new OrderCreatedEvent();
@@ -37,7 +38,7 @@ public class OrderAggregate {
     }
 
     @EventSourcingHandler
-    public void on(OrderCreatedEvent event){
+    public void on(OrderCreatedEvent event) {
         this.orderId = event.getOrderId();
         this.customerId = event.getCustomerId();
         this.paymentId = event.getPaymentId();

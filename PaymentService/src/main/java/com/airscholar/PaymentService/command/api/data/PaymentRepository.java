@@ -1,4 +1,4 @@
-package com.airscholar.PaymentService.data;
+package com.airscholar.PaymentService.command.api.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

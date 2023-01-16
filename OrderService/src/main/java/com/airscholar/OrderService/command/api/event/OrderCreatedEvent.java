@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderCreatedEvent {
+    private String transactionId;
     private String orderId;
     private String customerId;
     private String paymentId;
