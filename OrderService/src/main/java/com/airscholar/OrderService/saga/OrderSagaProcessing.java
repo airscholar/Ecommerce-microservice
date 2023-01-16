@@ -3,18 +3,19 @@ package com.airscholar.OrderService.saga;
 import com.airscholar.CommonService.command.CompletePaymentCommand;
 import com.airscholar.CommonService.command.CreatePaymentCommand;
 import com.airscholar.CommonService.command.ValidatePaymentCommand;
-import com.airscholar.CommonService.data.Customer;
-import com.airscholar.CommonService.data.Payment;
 import com.airscholar.CommonService.event.PaymentCreatedEvent;
 import com.airscholar.CommonService.event.PaymentValidatedEvent;
 import com.airscholar.CommonService.queries.GetCustomerByCustomerIdQuery;
 import com.airscholar.CommonService.queries.GetPaymentByTransactionId;
+import com.airscholar.CustomerService.command.api.entity.Customer;
 import com.airscholar.OrderService.command.api.data.Order;
 import com.airscholar.OrderService.command.api.event.OrderCreatedEvent;
 import com.airscholar.OrderService.query.api.query.GetOrderByIdQuery;
+import com.airscholar.PaymentService.data.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
+import org.axonframework.modelling.saga.EndSaga;
 import org.axonframework.modelling.saga.SagaEventHandler;
 import org.axonframework.modelling.saga.SagaLifecycle;
 import org.axonframework.modelling.saga.StartSaga;
@@ -96,6 +97,7 @@ public class OrderSagaProcessing {
     }
 
     @SagaEventHandler(associationProperty = "transactionId")
+    @EndSaga
     public void handle(PaymentValidatedEvent event){
         //check for payment validity
         GetPaymentByTransactionId getPaymentByTransactionId = new GetPaymentByTransactionId(event.getTransactionId());

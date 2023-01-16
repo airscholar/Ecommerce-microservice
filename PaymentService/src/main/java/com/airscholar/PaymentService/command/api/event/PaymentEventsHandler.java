@@ -10,10 +10,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PaymentEventHandler {
+public class PaymentEventsHandler {
 
     private PaymentService paymentService;
-    public PaymentEventHandler(PaymentService paymentService) {
+    public PaymentEventsHandler(PaymentService paymentService) {
         this.paymentService = paymentService;
     }
 
@@ -27,16 +27,18 @@ public class PaymentEventHandler {
 
     @EventHandler
     public void handle(PaymentValidatedEvent event){
-        Payment payment = new Payment();
-        BeanUtils.copyProperties(event, payment);
+        Payment payment = this.paymentService.findByTransactionId(event.getTransactionId());
+
+        payment.setPaymentStatus(event.getPaymentStatus());
 
         paymentService.create(payment);
     }
 
     @EventHandler
     public void handle(PaymentCompletedEvent event){
-        Payment payment = new Payment();
-        BeanUtils.copyProperties(event, payment);
+        Payment payment = this.paymentService.findByTransactionId(event.getTransactionId());
+
+        payment.setPaymentStatus(event.getPaymentStatus());
 
         paymentService.create(payment);
     }
